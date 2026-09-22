@@ -1,3 +1,4 @@
+import { useState } from "react";
 import frame from "@/assets/invite-frame.png.asset.json";
 import band from "@/assets/floral-band.png.asset.json";
 import scheduleFrame from "@/assets/schedule-frame.png.asset.json";
