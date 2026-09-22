@@ -1,14 +1,29 @@
 import { useState } from "react";
+import { MapPin } from "lucide-react";
 import frame from "@/assets/invite-frame.png.asset.json";
 import band from "@/assets/floral-band.png.asset.json";
 import scheduleFrame from "@/assets/schedule-frame.png.asset.json";
+import dresscodeFrame from "@/assets/dresscode-frame.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
 
 const schedule = [
-  { time: "16:00", label: "სტუმრების შეკრება" },
-  { time: "17:00", label: "ცერემონია" },
-  { time: "19:00", label: "სუფრა და ცეკვები" },
+  {
+    time: "12:00",
+    label: "ფოტოსესია სასტუმროში",
+    link: "https://maps.app.goo.gl/vtAEEmrkupa8fShT7?g_st=ic",
+  },
+  { time: "14:00", label: "ფოტოსესია ძველ ბათუმში" },
+  {
+    time: "16:00",
+    label: "ხელის მოწერის ცერემონიალი პეტრას ციხე",
+    link: "https://maps.app.goo.gl/B2pJqNkRgCehzroB8?g_st=ic",
+  },
+  {
+    time: "18:00",
+    label: "გალა ვახშამი ერა ჰოლში",
+    link: "https://maps.app.goo.gl/KKvZjWKEvpfrzUtE8?g_st=ic",
+  },
 ];
 
 export function Landing() {
