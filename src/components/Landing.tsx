@@ -1,5 +1,6 @@
 import { useState } from "react";
 import frame from "@/assets/invite-frame.png.asset.json";
+import banner from "@/assets/floral-banner.jpg.asset.json";
 import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
 
@@ -28,7 +29,22 @@ export function Landing() {
         </div>
       </div>
 
-      {dateDone && <Countdown className="mt-10 w-full max-w-md animate-soft-in" />}
+      {dateDone && (
+        <>
+          <div className="mt-10 w-full max-w-md animate-soft-in">
+            <img src={banner.url} alt="" className="w-full rounded-2xl object-cover" />
+          </div>
+          <div className="mt-6 max-w-md text-center animate-soft-in [animation-delay:400ms]">
+            <p className="font-handwritten text-3xl leading-snug text-foreground sm:text-4xl">
+              So happy to share the special day with you
+            </p>
+            <p className="mt-3 font-handwritten text-2xl leading-snug text-primary sm:text-3xl">
+              Let’s make it unforgettable
+            </p>
+          </div>
+          <Countdown className="mt-10 w-full max-w-md animate-soft-in [animation-delay:700ms]" />
+        </>
+      )}
     </main>
   );
 }
