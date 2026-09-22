@@ -103,6 +103,20 @@ export function Landing() {
               </div>
             </div>
           </div>
+
+          <div className="-mx-5 mt-10 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:800ms] sm:mx-0 sm:w-full sm:max-w-md">
+            <div className="relative">
+              <img src={dresscodeFrame.url} alt="" className="w-full" />
+              <div className="absolute inset-x-0 top-[16%] bottom-[30%] flex flex-col items-center justify-center px-[18%] text-center">
+                <h2 className="font-galaktioni text-3xl text-foreground sm:text-4xl">
+                  დრესკოდი
+                </h2>
+                <p className="mt-3 font-galaktioni text-xl leading-snug text-primary sm:text-2xl">
+                  კლასიკური, ელეგანტური
+                </p>
+              </div>
+            </div>
+          </div>
         </>
       )}
     </main>
