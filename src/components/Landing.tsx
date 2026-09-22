@@ -21,10 +21,10 @@ export function Landing() {
           <p className="text-xs uppercase tracking-[0.5em] text-muted-foreground">
             ერთად
           </p>
-          <h1 className="mt-6 text-5xl leading-tight text-foreground sm:text-7xl">
-            მარიამი
-            <span className="mx-3 text-primary">&</span>
-            გიორგი
+          <h1 className="mt-6 flex flex-col items-center gap-1 text-4xl leading-tight text-foreground sm:flex-row sm:gap-4 sm:text-6xl">
+            <span>მარიამი</span>
+            <span className="text-primary">&</span>
+            <span>გიორგი</span>
           </h1>
           <div className="mx-auto mt-8 h-px w-24 bg-primary/40" />
           <p className="mt-8 max-w-md text-balance text-base text-muted-foreground">
