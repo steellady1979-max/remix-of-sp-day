@@ -71,7 +71,6 @@ export function VideoIntro({ onFinish }: { onFinish: () => void }) {
         preload="auto"
         disablePictureInPicture
         controls={false}
-        // @ts-expect-error vendor attribute for iOS/Android inline playback
         webkit-playsinline="true"
         x5-playsinline="true"
       />
