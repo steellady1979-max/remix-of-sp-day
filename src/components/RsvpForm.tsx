@@ -34,7 +34,7 @@ export function RsvpForm({ className = "" }: { className?: string }) {
     const parsed = rsvpSchema.safeParse({
       name,
       attending,
-      guests: attending ? guests : 0 || 1,
+      guests: attending ? guests : 1,
       message,
     });
 
