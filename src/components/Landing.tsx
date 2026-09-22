@@ -6,6 +6,8 @@ import scheduleFrame from "@/assets/schedule-frame.png.asset.json";
 import dresscodeFrame from "@/assets/dresscode-frame.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
+import { PolaroidGallery } from "@/components/PolaroidGallery";
+import { RsvpForm } from "@/components/RsvpForm";
 
 const schedule = [
   {
@@ -117,6 +119,10 @@ export function Landing() {
               </div>
             </div>
           </div>
+
+          <PolaroidGallery className="mt-14 w-full max-w-md" />
+
+          <RsvpForm className="mt-14 w-full max-w-md" />
         </>
       )}
     </main>
