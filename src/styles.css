@@ -65,7 +65,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.985 0.018 110);
+  --background: oklch(0.962 0.022 88);
   --foreground: oklch(0.32 0.03 25);
   --card: oklch(0.995 0.008 110);
   --card-foreground: oklch(0.32 0.03 25);
@@ -161,4 +161,15 @@
 
 @utility animate-fade-up {
   animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@font-face {
+  font-family: "Galaktioni";
+  src: url("/__l5e/assets-v1/e81a5b6e-8e17-4f2f-95b4-dad2d27a475c/galaktioni.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@utility font-galaktioni {
+  font-family: "Galaktioni", var(--font-display);
 }
