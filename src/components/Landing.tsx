@@ -1,8 +1,14 @@
-import { useState } from "react";
 import frame from "@/assets/invite-frame.png.asset.json";
 import band from "@/assets/floral-band.png.asset.json";
+import scheduleFrame from "@/assets/schedule-frame.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
+
+const schedule = [
+  { time: "16:00", label: "სტუმრების შეკრება" },
+  { time: "17:00", label: "ცერემონია" },
+  { time: "19:00", label: "სუფრა და ცეკვები" },
+];
 
 export function Landing() {
   const [namesDone, setNamesDone] = useState(false);
