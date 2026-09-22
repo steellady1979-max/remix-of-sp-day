@@ -32,7 +32,7 @@ export function Landing() {
       {dateDone && (
         <>
           <Countdown className="mt-10 w-full max-w-md animate-soft-in" />
-          <div className="mt-8 w-full max-w-md animate-soft-in [animation-delay:300ms]">
+          <div className="-mx-5 mt-8 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:300ms] sm:mx-0 sm:w-full sm:max-w-md">
             <img src={band.url} alt="" className="w-full" />
           </div>
           <div className="mt-6 max-w-md text-center animate-soft-in [animation-delay:600ms]">
