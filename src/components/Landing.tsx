@@ -6,7 +6,7 @@ export function Landing() {
       <div className="relative w-full max-w-md animate-fade-up">
         <img src={frame.url} alt="" className="w-full" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-[22%] text-center">
-          <h1 className="font-galaktioni text-3xl leading-tight text-foreground sm:text-4xl">
+          <h1 className="font-galaktioni text-[2.1rem] leading-tight text-foreground sm:text-5xl">
             სოფია
             <span className="mx-2 text-primary">&</span>
             კახა
