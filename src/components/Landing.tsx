@@ -1,21 +1,34 @@
+import { useState } from "react";
 import frame from "@/assets/invite-frame.png.asset.json";
+import { Typewriter } from "@/components/Typewriter";
+import { Countdown } from "@/components/Countdown";
 
 export function Landing() {
+  const [namesDone, setNamesDone] = useState(false);
+  const [dateDone, setDateDone] = useState(false);
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-background px-5 py-10">
-      <div className="relative w-full max-w-md animate-fade-up">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-background px-5 py-12">
+      <div className="relative w-full max-w-md animate-frame-reveal">
         <img src={frame.url} alt="" className="w-full" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-[22%] text-center">
           <h1 className="font-galaktioni text-[2.1rem] leading-tight text-foreground sm:text-5xl">
-            სოფია
-            <span className="mx-2 text-primary">&</span>
-            კახა
+            <Typewriter text="სოფია" delay={1500} speed={130} onDone={() => setNamesDone(true)} />
+            <span
+              className="mx-2 text-primary transition-opacity duration-700"
+              style={{ opacity: namesDone ? 1 : 0 }}
+            >
+              &
+            </span>
+            {namesDone && <Typewriter text="კახა" speed={130} />}
           </h1>
           <p className="mt-4 font-galaktioni text-lg tracking-[0.15em] text-muted-foreground sm:text-xl">
-            06.06.2027
+            <Typewriter text="06.06.2027" delay={3400} speed={95} onDone={() => setDateDone(true)} />
           </p>
         </div>
       </div>
+
+      {dateDone && <Countdown className="mt-10 w-full max-w-md animate-soft-in" />}
     </main>
   );
 }
