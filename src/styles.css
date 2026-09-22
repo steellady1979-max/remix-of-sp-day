@@ -202,3 +202,7 @@
 @utility font-galaktioni {
   font-family: "Galaktioni", var(--font-display);
 }
+
+@utility font-handwritten {
+  font-family: "Great Vibes", "Parisienne", cursive;
+}
