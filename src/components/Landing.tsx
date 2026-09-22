@@ -1,8 +1,15 @@
 import { useState } from "react";
 import frame from "@/assets/invite-frame.png.asset.json";
 import band from "@/assets/floral-band.png.asset.json";
+import scheduleFrame from "@/assets/schedule-frame.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
+
+const schedule = [
+  { time: "16:00", label: "სტუმრების შეკრება" },
+  { time: "17:00", label: "ცერემონია" },
+  { time: "19:00", label: "სუფრა და ცეკვები" },
+];
 
 export function Landing() {
   const [namesDone, setNamesDone] = useState(false);
@@ -42,6 +49,33 @@ export function Landing() {
             <p className="mt-3 font-handwritten text-2xl leading-snug text-primary sm:text-3xl">
               Let’s make it unforgettable
             </p>
+          </div>
+
+          <div className="-mx-5 mt-10 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:800ms] sm:mx-0 sm:w-full sm:max-w-md">
+            <div className="relative">
+              <img src={scheduleFrame.url} alt="" className="w-full" />
+              <div className="absolute inset-x-0 top-[23%] bottom-[9%] flex flex-col items-center justify-center px-[17%] text-center">
+                <h2 className="font-galaktioni text-2xl text-foreground sm:text-3xl">
+                  დღის განრიგი
+                </h2>
+                <ul className="mt-4 space-y-3">
+                  {schedule.map((item, i) => (
+                    <li
+                      key={item.time}
+                      className="animate-soft-in"
+                      style={{ animationDelay: `${1200 + i * 350}ms` }}
+                    >
+                      <p className="font-galaktioni text-xl leading-none text-primary sm:text-2xl">
+                        {item.time}
+                      </p>
+                      <p className="mt-1 font-galaktioni text-lg leading-snug text-foreground sm:text-xl">
+                        {item.label}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </>
       )}
