@@ -119,6 +119,10 @@ export function Landing() {
               </div>
             </div>
           </div>
+
+          <PolaroidGallery className="mt-14 w-full max-w-md" />
+
+          <RsvpForm className="mt-14 w-full max-w-md" />
         </>
       )}
     </main>
