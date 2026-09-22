@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "2da62626-9176-4fe6-b1b7-5005422216b3",
-  "project_id": "127b9557-9dce-42a0-aeab-1d1b6b9fb2a7",
-  "url": "/__l5e/assets-v1/2da62626-9176-4fe6-b1b7-5005422216b3/dresscode-frame.png",
-  "r2_key": "a/v1/127b9557-9dce-42a0-aeab-1d1b6b9fb2a7/2da62626-9176-4fe6-b1b7-5005422216b3/dresscode-frame.png",
-  "original_filename": "dresscode-frame.png",
-  "size": 642622,
   "content_type": "image/png",
-  "created_at": "2026-09-22T19:14:55Z"
+  "created_at": "2026-09-22T19:14:55Z",
+  "original_filename": "dresscode-frame.png",
+  "project_id": "02200a78-7841-429c-b0a1-34666f784016",
+  "r2_key": "a/v1/02200a78-7841-429c-b0a1-34666f784016/2da62626-9176-4fe6-b1b7-5005422216b3/dresscode-frame.png",
+  "size": 642622,
+  "url": "/__l5e/assets-v1/2da62626-9176-4fe6-b1b7-5005422216b3/dresscode-frame.png",
+  "version": 1
 }
