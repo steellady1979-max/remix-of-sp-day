@@ -73,7 +73,7 @@ export function Landing() {
                 <h2 className="font-galaktioni text-2xl text-foreground sm:text-3xl">
                   დღის განრიგი
                 </h2>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-4 space-y-3.5">
                   {schedule.map((item, i) => (
                     <li
                       key={item.time}
@@ -86,6 +86,17 @@ export function Landing() {
                       <p className="mt-1 font-galaktioni text-lg leading-snug text-foreground sm:text-xl">
                         {item.label}
                       </p>
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-white/50 px-4 py-1 font-galaktioni text-sm text-primary transition-colors duration-300 hover:bg-primary/10 sm:text-base"
+                        >
+                          <MapPin className="h-3.5 w-3.5" />
+                          ლოკაცია
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
