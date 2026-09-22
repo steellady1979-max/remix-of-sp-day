@@ -1,14 +1,29 @@
 import { useState } from "react";
+import { MapPin } from "lucide-react";
 import frame from "@/assets/invite-frame.png.asset.json";
 import band from "@/assets/floral-band.png.asset.json";
 import scheduleFrame from "@/assets/schedule-frame.png.asset.json";
+import dresscodeFrame from "@/assets/dresscode-frame.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
 
 const schedule = [
-  { time: "16:00", label: "სტუმრების შეკრება" },
-  { time: "17:00", label: "ცერემონია" },
-  { time: "19:00", label: "სუფრა და ცეკვები" },
+  {
+    time: "12:00",
+    label: "ფოტოსესია სასტუმროში",
+    link: "https://maps.app.goo.gl/vtAEEmrkupa8fShT7?g_st=ic",
+  },
+  { time: "14:00", label: "ფოტოსესია ძველ ბათუმში" },
+  {
+    time: "16:00",
+    label: "ხელის მოწერის ცერემონიალი პეტრას ციხე",
+    link: "https://maps.app.goo.gl/B2pJqNkRgCehzroB8?g_st=ic",
+  },
+  {
+    time: "18:00",
+    label: "გალა ვახშამი ერა ჰოლში",
+    link: "https://maps.app.goo.gl/KKvZjWKEvpfrzUtE8?g_st=ic",
+  },
 ];
 
 export function Landing() {
@@ -58,7 +73,7 @@ export function Landing() {
                 <h2 className="font-galaktioni text-2xl text-foreground sm:text-3xl">
                   დღის განრიგი
                 </h2>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-4 space-y-3.5">
                   {schedule.map((item, i) => (
                     <li
                       key={item.time}
@@ -71,9 +86,34 @@ export function Landing() {
                       <p className="mt-1 font-galaktioni text-lg leading-snug text-foreground sm:text-xl">
                         {item.label}
                       </p>
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-white/50 px-4 py-1 font-galaktioni text-sm text-primary transition-colors duration-300 hover:bg-primary/10 sm:text-base"
+                        >
+                          <MapPin className="h-3.5 w-3.5" />
+                          ლოკაცია
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="-mx-5 mt-10 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:800ms] sm:mx-0 sm:w-full sm:max-w-md">
+            <div className="relative">
+              <img src={dresscodeFrame.url} alt="" className="w-full" />
+              <div className="absolute inset-x-0 top-[16%] bottom-[30%] flex flex-col items-center justify-center px-[18%] text-center">
+                <h2 className="font-galaktioni text-3xl text-foreground sm:text-4xl">
+                  დრესკოდი
+                </h2>
+                <p className="mt-3 font-galaktioni text-xl leading-snug text-primary sm:text-2xl">
+                  კლასიკური, ელეგანტური
+                </p>
               </div>
             </div>
           </div>
