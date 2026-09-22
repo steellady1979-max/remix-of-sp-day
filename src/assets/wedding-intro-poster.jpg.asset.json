@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "0e0caa67-cc3b-47eb-9323-9d1bdb31c76f",
-  "project_id": "0bd822f2-21bb-46b9-a2cb-d6ec71597855",
-  "url": "/__l5e/assets-v1/0e0caa67-cc3b-47eb-9323-9d1bdb31c76f/wedding-intro-poster.jpg",
-  "r2_key": "a/v1/0bd822f2-21bb-46b9-a2cb-d6ec71597855/0e0caa67-cc3b-47eb-9323-9d1bdb31c76f/wedding-intro-poster.jpg",
-  "original_filename": "wedding-intro-poster.jpg",
-  "size": 139959,
   "content_type": "image/jpeg",
-  "created_at": "2026-09-22T18:44:03Z"
+  "created_at": "2026-09-22T18:44:03Z",
+  "original_filename": "wedding-intro-poster.jpg",
+  "project_id": "127b9557-9dce-42a0-aeab-1d1b6b9fb2a7",
+  "r2_key": "a/v1/127b9557-9dce-42a0-aeab-1d1b6b9fb2a7/0e0caa67-cc3b-47eb-9323-9d1bdb31c76f/wedding-intro-poster.jpg",
+  "size": 139959,
+  "url": "/__l5e/assets-v1/0e0caa67-cc3b-47eb-9323-9d1bdb31c76f/wedding-intro-poster.jpg",
+  "version": 1
 }

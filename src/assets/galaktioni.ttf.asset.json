@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "e81a5b6e-8e17-4f2f-95b4-dad2d27a475c",
-  "project_id": "0bd822f2-21bb-46b9-a2cb-d6ec71597855",
-  "url": "/__l5e/assets-v1/e81a5b6e-8e17-4f2f-95b4-dad2d27a475c/galaktioni.ttf",
-  "r2_key": "a/v1/0bd822f2-21bb-46b9-a2cb-d6ec71597855/e81a5b6e-8e17-4f2f-95b4-dad2d27a475c/galaktioni.ttf",
-  "original_filename": "galaktioni.ttf",
-  "size": 32192,
   "content_type": "font/ttf",
-  "created_at": "2026-09-22T18:51:55Z"
+  "created_at": "2026-09-22T18:51:55Z",
+  "original_filename": "galaktioni.ttf",
+  "project_id": "127b9557-9dce-42a0-aeab-1d1b6b9fb2a7",
+  "r2_key": "a/v1/127b9557-9dce-42a0-aeab-1d1b6b9fb2a7/e81a5b6e-8e17-4f2f-95b4-dad2d27a475c/galaktioni.ttf",
+  "size": 32192,
+  "url": "/__l5e/assets-v1/e81a5b6e-8e17-4f2f-95b4-dad2d27a475c/galaktioni.ttf",
+  "version": 1
 }
