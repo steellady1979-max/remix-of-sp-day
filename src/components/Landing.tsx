@@ -9,6 +9,7 @@ import { Countdown } from "@/components/Countdown";
 import { PolaroidGallery } from "@/components/PolaroidGallery";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Reveal } from "@/components/Reveal";
+import { SeaFarewell } from "@/components/SeaFarewell";
 
 const schedule = [
   {
@@ -127,6 +128,9 @@ export function Landing() {
           <PolaroidGallery className="mt-14 w-full max-w-md" />
 
           <RsvpForm className="mt-14 w-full max-w-md" />
+
+          <SeaFarewell className="-mx-5 mt-14 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md" />
+
         </>
       )}
     </main>
