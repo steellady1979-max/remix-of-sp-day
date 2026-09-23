@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import band from "@/assets/floral-band.png.asset.json";
 
 const rsvpSchema = z.object({
   name: z
