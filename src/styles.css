@@ -238,10 +238,53 @@
   animation: sea-shimmer 7s ease-in-out infinite;
 }
 
+@keyframes sea-swell {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(6px) scaleY(1.08); }
+}
+
+@utility animate-swell {
+  animation: sea-swell 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-swell-late {
+  animation: sea-swell 11s ease-in-out 1.6s infinite;
+  will-change: transform;
+}
+
+@keyframes wave-drift-mid {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@utility animate-wave-mid {
+  animation: wave-drift-mid 20s linear infinite, wave-bob 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes sea-glint {
+  0%, 100% { opacity: 0; transform: translateX(-6px) scale(0.7); }
+  50% { opacity: 0.9; transform: translateX(6px) scale(1); }
+}
+
+@utility animate-glint {
+  animation: sea-glint 4.5s ease-in-out infinite;
+}
+
+@utility animate-glint-late {
+  animation: sea-glint 5.5s ease-in-out 1.8s infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-wave-slow,
   .animate-wave-fast,
+  .animate-wave-mid,
+  .animate-swell,
+  .animate-swell-late,
   .animate-shimmer,
+  .animate-glint,
+  .animate-glint-late,
   .animate-float,
   .animate-sway {
     animation: none !important;
