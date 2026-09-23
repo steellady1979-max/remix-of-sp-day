@@ -57,57 +57,55 @@ export function Landing() {
         <>
           <Countdown className="mt-10 w-full max-w-md animate-soft-in" />
           <div className="-mx-5 mt-8 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:300ms] sm:mx-0 sm:w-full sm:max-w-md">
-            <img src={band.url} alt="" className="w-full" />
+            <img src={band.url} alt="" className="w-full animate-float" />
           </div>
-          <div className="mt-6 max-w-md text-center animate-soft-in [animation-delay:600ms]">
+          <Reveal className="mt-6 max-w-md text-center" delay={100}>
             <p className="font-handwritten text-3xl leading-snug text-foreground sm:text-4xl">
               So happy to share the special day with you
             </p>
             <p className="mt-3 font-handwritten text-2xl leading-snug text-primary sm:text-3xl">
               Let’s make it unforgettable
             </p>
-          </div>
+          </Reveal>
 
-          <div className="-mx-5 mt-10 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:800ms] sm:mx-0 sm:w-full sm:max-w-md">
-            <div className="relative">
+          <Reveal className="-mx-5 mt-10 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md">
+            <div className="relative animate-sway">
               <img src={scheduleFrame.url} alt="" className="w-full" />
-              <div className="absolute inset-x-0 top-[23%] bottom-[9%] flex flex-col items-center justify-center px-[17%] text-center">
+              <div className="absolute inset-x-0 top-[19%] bottom-[13%] flex flex-col items-center justify-start px-[17%] text-center">
                 <h2 className="font-galaktioni text-2xl text-foreground sm:text-3xl">
                   დღის განრიგი
                 </h2>
-                <ul className="mt-4 space-y-3.5">
+                <ul className="mt-3 space-y-3">
                   {schedule.map((item, i) => (
-                    <li
-                      key={item.time}
-                      className="animate-soft-in"
-                      style={{ animationDelay: `${1200 + i * 350}ms` }}
-                    >
-                      <p className="font-galaktioni text-xl leading-none text-primary sm:text-2xl">
-                        {item.time}
-                      </p>
-                      <p className="mt-1 font-galaktioni text-lg leading-snug text-foreground sm:text-xl">
-                        {item.label}
-                      </p>
-                      {item.link && (
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-white/50 px-4 py-1 font-galaktioni text-sm text-primary transition-colors duration-300 hover:bg-primary/10 sm:text-base"
-                        >
-                          <MapPin className="h-3.5 w-3.5" />
-                          ლოკაცია
-                        </a>
-                      )}
-                    </li>
+                    <Reveal key={item.time} delay={i * 220} y={14}>
+                      <li>
+                        <p className="font-galaktioni text-xl leading-none text-primary sm:text-2xl">
+                          {item.time}
+                        </p>
+                        <p className="mt-1 font-galaktioni text-lg leading-snug text-foreground sm:text-xl">
+                          {item.label}
+                        </p>
+                        {item.link && (
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-white/50 px-3.5 py-0.5 font-galaktioni text-sm text-primary transition-all duration-300 hover:scale-105 hover:bg-primary/10"
+                          >
+                            <MapPin className="h-3.5 w-3.5" />
+                            ლოკაცია
+                          </a>
+                        )}
+                      </li>
+                    </Reveal>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="-mx-5 mt-10 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:800ms] sm:mx-0 sm:w-full sm:max-w-md">
-            <div className="relative">
+          <Reveal className="-mx-5 mt-10 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md">
+            <div className="relative animate-float">
               <img src={dresscodeFrame.url} alt="" className="w-full" />
               <div className="absolute inset-x-0 top-[16%] bottom-[30%] flex flex-col items-center justify-center px-[18%] text-center">
                 <h2 className="font-galaktioni text-3xl text-foreground sm:text-4xl">
@@ -118,7 +116,7 @@ export function Landing() {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           <PolaroidGallery className="mt-14 w-full max-w-md" />
 
