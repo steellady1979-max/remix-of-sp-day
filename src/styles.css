@@ -209,6 +209,46 @@
   animation: gentle-sway 9s ease-in-out infinite;
 }
 
+@keyframes wave-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes wave-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@utility animate-wave-slow {
+  animation: wave-drift 26s linear infinite, wave-bob 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-wave-fast {
+  animation: wave-drift 15s linear infinite reverse, wave-bob 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes sea-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.6; }
+}
+
+@utility animate-shimmer {
+  animation: sea-shimmer 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave-slow,
+  .animate-wave-fast,
+  .animate-shimmer,
+  .animate-float,
+  .animate-sway {
+    animation: none !important;
+  }
+}
+
+
 
 @font-face {
   font-family: "Galaktioni";
