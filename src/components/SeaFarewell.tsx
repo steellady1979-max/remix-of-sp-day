@@ -1,11 +1,11 @@
-import seaFrame from "@/assets/sea-frame.png.asset.json";
+import seaFrame from "@/assets/sea-frame.png";
 import { Reveal } from "@/components/Reveal";
 
 export function SeaFarewell({ className = "" }: { className?: string }) {
   return (
     <Reveal className={className}>
       <div className="relative select-none overflow-hidden">
-        <img src={seaFrame.url} alt="" className="w-full" />
+        <img src={seaFrame} alt="" className="w-full" />
 
         {/* moving sea waves over the painted ocean */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%] overflow-hidden">

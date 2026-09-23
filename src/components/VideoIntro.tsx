@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import introVideo from "@/assets/wedding-intro.mp4.asset.json";
-import introPoster from "@/assets/wedding-intro-poster.jpg.asset.json";
+import introVideo from "@/assets/wedding-intro.mp4";
+import introPoster from "@/assets/wedding-intro-poster.jpg";
 
 /**
  * Full-screen intro that plays a muted, controls-free clip and then
@@ -63,8 +63,8 @@ export function VideoIntro({ onFinish }: { onFinish: () => void }) {
       <video
         ref={videoRef}
         className="h-full w-full object-cover"
-        src={introVideo.url}
-        poster={introPoster.url}
+        src={introVideo}
+        poster={introPoster}
         muted
         autoPlay
         playsInline
