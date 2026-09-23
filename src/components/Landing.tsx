@@ -69,21 +69,25 @@ export function Landing() {
             </p>
           </Reveal>
 
-          <Reveal className="-mx-5 mt-10 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md">
+          <Reveal className="mt-12 text-center">
+            <h2 className="font-galaktioni text-3xl text-foreground sm:text-4xl">
+              დღის განრიგი
+            </h2>
+            <span className="mx-auto mt-3 block h-px w-16 bg-primary/40" />
+          </Reveal>
+
+          <Reveal className="-mx-5 mt-4 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md">
             <div className="relative animate-sway">
               <img src={scheduleFrame.url} alt="" className="w-full" />
-              <div className="absolute inset-x-0 top-[19%] bottom-[13%] flex flex-col items-center justify-start px-[17%] text-center">
-                <h2 className="font-galaktioni text-2xl text-foreground sm:text-3xl">
-                  დღის განრიგი
-                </h2>
-                <ul className="mt-3 space-y-3">
+              <div className="absolute inset-x-0 top-[15%] bottom-[14%] flex flex-col items-center justify-center px-[16%] text-center">
+                <ul className="flex w-full flex-col items-center gap-[3.2vw] sm:gap-4">
                   {schedule.map((item, i) => (
-                    <Reveal key={item.time} delay={i * 220} y={14}>
+                    <Reveal key={item.time} delay={i * 180} y={12}>
                       <li>
-                        <p className="font-galaktioni text-xl leading-none text-primary sm:text-2xl">
+                        <p className="font-galaktioni text-[4vw] leading-none text-primary sm:text-xl">
                           {item.time}
                         </p>
-                        <p className="mt-1 font-galaktioni text-lg leading-snug text-foreground sm:text-xl">
+                        <p className="mt-0.5 font-galaktioni text-[3.6vw] leading-tight text-foreground sm:text-lg">
                           {item.label}
                         </p>
                         {item.link && (
@@ -91,9 +95,9 @@ export function Landing() {
                             href={item.link}
                             target="_blank"
                             rel="noreferrer"
-                            className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-white/50 px-3.5 py-0.5 font-galaktioni text-sm text-primary transition-all duration-300 hover:scale-105 hover:bg-primary/10"
+                            className="mt-1 inline-flex items-center gap-1 rounded-full border border-primary/40 bg-white/60 px-3 py-[1px] font-galaktioni text-[2.9vw] leading-tight text-primary transition-all duration-300 hover:scale-105 hover:bg-primary/10 sm:text-xs"
                           >
-                            <MapPin className="h-3.5 w-3.5" />
+                            <MapPin className="h-3 w-3" />
                             ლოკაცია
                           </a>
                         )}
@@ -104,6 +108,7 @@ export function Landing() {
               </div>
             </div>
           </Reveal>
+
 
           <Reveal className="-mx-5 mt-10 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md">
             <div className="relative animate-float">
