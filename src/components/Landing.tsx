@@ -8,6 +8,7 @@ import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
 import { PolaroidGallery } from "@/components/PolaroidGallery";
 import { RsvpForm } from "@/components/RsvpForm";
+import { Reveal } from "@/components/Reveal";
 
 const schedule = [
   {
