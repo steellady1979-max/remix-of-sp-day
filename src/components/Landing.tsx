@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { MapPin } from "lucide-react";
-import frame from "@/assets/invite-frame.png.asset.json";
-import band from "@/assets/floral-band.png.asset.json";
-import scheduleFrame from "@/assets/schedule-frame.png.asset.json";
-import dresscodeFrame from "@/assets/dresscode-frame.png.asset.json";
+import frame from "@/assets/invite-frame.png";
+import band from "@/assets/floral-band.png";
+import scheduleFrame from "@/assets/schedule-frame.png";
+import dresscodeFrame from "@/assets/dresscode-frame.png";
 import { Typewriter } from "@/components/Typewriter";
 import { Countdown } from "@/components/Countdown";
 import { PolaroidGallery } from "@/components/PolaroidGallery";
@@ -37,7 +37,7 @@ export function Landing() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background px-5 py-12">
       <div className="relative w-full max-w-md animate-frame-reveal">
-        <img src={frame.url} alt="" className="w-full" />
+        <img src={frame} alt="" className="w-full" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-[22%] text-center">
           <h1 className="font-galaktioni text-[2.1rem] leading-tight text-foreground sm:text-5xl">
             <Typewriter text="სოფია" delay={1500} speed={130} onDone={() => setNamesDone(true)} />
@@ -59,7 +59,7 @@ export function Landing() {
         <>
           <Countdown className="mt-10 w-full max-w-md animate-soft-in" />
           <div className="-mx-5 mt-8 w-[calc(100%+2.5rem)] animate-soft-in [animation-delay:300ms] sm:mx-0 sm:w-full sm:max-w-md">
-            <img src={band.url} alt="" className="w-full animate-float" />
+            <img src={band} alt="" className="w-full animate-float" />
           </div>
           <Reveal className="mt-6 max-w-md text-center" delay={100}>
             <p className="font-handwritten text-3xl leading-snug text-foreground sm:text-4xl">
@@ -79,7 +79,7 @@ export function Landing() {
 
           <Reveal className="-mx-5 mt-4 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md">
             <div className="relative animate-sway">
-              <img src={scheduleFrame.url} alt="" className="w-full" />
+              <img src={scheduleFrame} alt="" className="w-full" />
               <div className="absolute inset-x-0 top-[15%] bottom-[14%] flex flex-col items-center justify-center px-[16%] text-center">
                 <ul className="flex w-full flex-col items-center gap-[3.2vw] sm:gap-4">
                   {schedule.map((item, i) => (
@@ -113,7 +113,7 @@ export function Landing() {
 
           <Reveal className="-mx-5 mt-10 w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full sm:max-w-md">
             <div className="relative animate-float">
-              <img src={dresscodeFrame.url} alt="" className="w-full" />
+              <img src={dresscodeFrame} alt="" className="w-full" />
               <div className="absolute inset-x-0 top-[16%] bottom-[30%] flex flex-col items-center justify-center px-[18%] text-center">
                 <h2 className="font-galaktioni text-3xl text-foreground sm:text-4xl">
                   დრესკოდი

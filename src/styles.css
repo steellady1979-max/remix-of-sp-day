@@ -252,7 +252,7 @@
 
 @font-face {
   font-family: "Galaktioni";
-  src: url("/__l5e/assets-v1/e81a5b6e-8e17-4f2f-95b4-dad2d27a475c/galaktioni.ttf") format("truetype");
+  src: url("./assets/galaktioni.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
