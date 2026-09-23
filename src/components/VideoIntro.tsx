@@ -3,59 +3,66 @@ import introVideo from "@/assets/wedding-intro.mp4";
 import introPoster from "@/assets/wedding-intro-poster.jpg";
 
 /**
- * Full-screen intro that plays a muted, controls-free clip and then
- * cross-fades into the landing page. Falls back to the poster image and a
- * timed exit if autoplay is blocked or the file is slow, so it never sticks.
+ * Full-screen intro that plays the complete muted clip and only then
+ * cross-fades into the landing page.
  */
 export function VideoIntro({ onFinish }: { onFinish: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [leaving, setLeaving] = useState(false);
+  const [needsPlay, setNeedsPlay] = useState(false);
   const done = useRef(false);
 
   useEffect(() => {
+    let fadeTimer: number | undefined;
+
     const finish = () => {
       if (done.current) return;
       done.current = true;
       setLeaving(true);
-      window.setTimeout(onFinish, 900);
+      fadeTimer = window.setTimeout(onFinish, 900);
     };
 
     const el = videoRef.current;
-    let hardStop: number | undefined;
 
     if (el) {
       el.muted = true;
       el.playsInline = true;
-      const started = () => {
-        // guarantee an exit even if 'ended' never fires
-        const total = Number.isFinite(el.duration) && el.duration > 0 ? el.duration : 6;
-        hardStop = window.setTimeout(finish, (total + 1.2) * 1000);
-      };
-      el.addEventListener("playing", started, { once: true });
       el.addEventListener("ended", finish, { once: true });
       el.addEventListener("error", finish, { once: true });
+
       const attempt = el.play();
       if (attempt && typeof attempt.catch === "function") {
         attempt.catch(() => {
-          // autoplay blocked: show poster briefly, then continue
-          window.setTimeout(finish, 2200);
+          // Some mobile browsers require one explicit tap before playback.
+          setNeedsPlay(true);
         });
       }
     } else {
-      window.setTimeout(finish, 1200);
+      finish();
     }
 
-    // absolute safety net
-    const safety = window.setTimeout(finish, 12000);
     return () => {
-      window.clearTimeout(safety);
-      if (hardStop) window.clearTimeout(hardStop);
+      if (fadeTimer) window.clearTimeout(fadeTimer);
+      el?.removeEventListener("ended", finish);
+      el?.removeEventListener("error", finish);
     };
   }, [onFinish]);
 
+  const startPlayback = async () => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    try {
+      el.currentTime = 0;
+      await el.play();
+      setNeedsPlay(false);
+    } catch {
+      setNeedsPlay(true);
+    }
+  };
+
   return (
     <div
-      aria-hidden
       className={`fixed inset-0 z-50 bg-background transition-opacity duration-[900ms] ease-out ${
         leaving ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
@@ -74,17 +81,15 @@ export function VideoIntro({ onFinish }: { onFinish: () => void }) {
         webkit-playsinline="true"
         x5-playsinline="true"
       />
-      <button
-        type="button"
-        onClick={() => {
-          if (done.current) return;
-          done.current = true;
-          setLeaving(true);
-          window.setTimeout(onFinish, 500);
-        }}
-        className="absolute inset-0 h-full w-full cursor-default bg-transparent"
-        aria-label="Skip intro"
-      />
+      {needsPlay && (
+        <button
+          type="button"
+          onClick={startPlayback}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full border border-white/70 bg-black/35 px-6 py-3 font-galaktioni text-lg text-white shadow-lg backdrop-blur-sm transition hover:bg-black/50"
+        >
+          ვიდეოს დაწყება
+        </button>
+      )}
     </div>
   );
 }

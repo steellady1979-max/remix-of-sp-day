@@ -7,36 +7,54 @@ export function SeaFarewell({ className = "" }: { className?: string }) {
       <div className="relative select-none overflow-hidden">
         <img src={seaFrame} alt="" className="w-full" loading="lazy" decoding="async" />
 
-        {/* living sea — confined to the painted water, softly masked so it never touches the flowers */}
-        <div className="sea-mask pointer-events-none absolute inset-x-0 bottom-[2.5%] h-[20%] overflow-hidden">
-          {/* back wave — seafoam, slow drift */}
-          <svg
-            className="absolute bottom-[26%] left-0 h-[70%] w-[200%] animate-wave-slow"
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,64 C180,16 360,108 540,60 C720,14 900,100 1080,58 C1260,20 1350,72 1440,58 L1440,120 L0,120 Z"
-              fill="rgba(122,180,200,0.38)"
-            />
-          </svg>
+        {/* A transparent, layered sea: the painted water remains visible underneath. */}
+        <div
+          className="sea-mask pointer-events-none absolute inset-x-0 bottom-[2.5%] h-[21%] overflow-hidden"
+          aria-hidden="true"
+        >
+          <div className="sea-swell sea-swell-back absolute inset-x-0 bottom-[24%] h-[68%]">
+            <svg
+              className="sea-track sea-track-back absolute bottom-0 left-0 h-full w-[200%]"
+              viewBox="0 0 2880 120"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <path
+                  id="sea-back-wave"
+                  d="M0 62 C150 31 294 30 446 61 S744 91 904 60 S1210 28 1440 62 L1440 120 L0 120 Z"
+                />
+              </defs>
+              <use href="#sea-back-wave" x="0" />
+              <use href="#sea-back-wave" x="1440" />
+            </svg>
+          </div>
 
-          {/* front wave — white foam crest, opposite drift */}
-          <svg
-            className="absolute bottom-0 left-0 h-[60%] w-[200%] animate-wave-mid"
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,66 C200,26 420,100 720,62 C1020,24 1240,96 1440,60 L1440,120 L0,120 Z"
-              fill="rgba(255,255,255,0.55)"
-            />
-          </svg>
+          <div className="sea-swell sea-swell-front absolute inset-x-0 bottom-0 h-[62%]">
+            <svg
+              className="sea-track sea-track-front absolute bottom-0 left-0 h-full w-[200%]"
+              viewBox="0 0 2880 120"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <path
+                  id="sea-front-wave"
+                  d="M0 58 C118 25 245 29 360 56 C486 86 606 89 724 57 C850 23 985 25 1102 55 C1220 85 1330 87 1440 58 L1440 120 L0 120 Z"
+                />
+                <path
+                  id="sea-foam-line"
+                  d="M0 58 C118 25 245 29 360 56 C486 86 606 89 724 57 C850 23 985 25 1102 55 C1220 85 1330 87 1440 58"
+                />
+              </defs>
+              <use className="sea-front-fill" href="#sea-front-wave" x="0" />
+              <use className="sea-front-fill" href="#sea-front-wave" x="1440" />
+              <use className="sea-foam" href="#sea-foam-line" x="0" />
+              <use className="sea-foam" href="#sea-foam-line" x="1440" />
+            </svg>
+          </div>
 
-          {/* gentle sunlight breathing on the water */}
-          <div className="absolute inset-x-0 bottom-0 h-full animate-shimmer bg-gradient-to-t from-white/25 to-transparent" />
+          <div className="sea-ripples absolute inset-x-[8%] bottom-[12%] h-[56%]" />
+          <div className="sea-glimmer absolute inset-0" />
         </div>
-
 
         {/* farewell words inside the oval */}
         <div className="absolute inset-x-0 top-[10%] bottom-[34%] flex flex-col items-center justify-center px-[27%] text-center">
@@ -46,9 +64,7 @@ export function SeaFarewell({ className = "" }: { className?: string }) {
           <h2 className="mt-3 font-galaktioni text-2xl leading-snug text-foreground sm:text-3xl">
             გელოდებით სიყვარულით
           </h2>
-          <p className="mt-3 font-galaktioni text-xl text-primary sm:text-2xl">
-            სოფია &amp; კახა
-          </p>
+          <p className="mt-3 font-galaktioni text-xl text-primary sm:text-2xl">სოფია &amp; კახა</p>
           <p className="mt-2 font-galaktioni text-sm tracking-[0.2em] text-muted-foreground">
             06.06.2027
           </p>
