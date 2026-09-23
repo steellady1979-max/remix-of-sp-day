@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import band from "@/assets/floral-band.png.asset.json";
 
 const rsvpSchema = z.object({
   name: z
@@ -64,6 +65,9 @@ export function RsvpForm({ className = "" }: { className?: string }) {
 
   return (
     <section className={className}>
+      <div className="-mx-5 mb-[-1.5rem] w-[calc(100%+2.5rem)] sm:mx-0 sm:w-full">
+        <img src={band.url} alt="" className="w-full animate-float" />
+      </div>
       <div className="rounded-[2rem] border border-primary/20 bg-card/50 px-5 py-8 shadow-[0_18px_40px_-28px_rgba(90,60,40,0.55)] sm:px-8">
         <h2 className="text-center font-galaktioni text-2xl text-foreground sm:text-3xl">
           დასწრების დადასტურება
