@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useState } from "react";
 import { VideoIntro } from "@/components/VideoIntro";
 import { Landing } from "@/components/Landing";
+import { HummingbirdFlight } from "@/components/HummingbirdFlight";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -9,8 +10,7 @@ export const Route = createFileRoute("/")({
       { title: "მარიამი & გიორგი — საქორწილო მოსაწვევი" },
       {
         name: "description",
-        content:
-          "მარიამისა და გიორგის საქორწილო მოსაწვევი: თარიღი, ადგილი და ცერემონიის დეტალები.",
+        content: "მარიამისა და გიორგის საქორწილო მოსაწვევი: თარიღი, ადგილი და ცერემონიის დეტალები.",
       },
       { property: "og:title", content: "მარიამი & გიორგი — საქორწილო მოსაწვევი" },
       {
@@ -33,6 +33,7 @@ function Index() {
       <div className={introDone ? "" : "pointer-events-none"}>
         <Landing />
       </div>
+      {introDone && <HummingbirdFlight />}
       {!introDone && <VideoIntro onFinish={finish} />}
     </>
   );
