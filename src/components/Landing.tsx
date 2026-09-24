@@ -14,19 +14,19 @@ import { SeaFarewell } from "@/components/SeaFarewell";
 const schedule = [
   {
     time: "12:00",
-    label: "ფოტოსესია სასტუმროში",
-    link: "https://maps.app.goo.gl/vtAEEmrkupa8fShT7?g_st=ic",
+    label: "ფოტოსესია ბილტმორ ჰოტელში",
+    link: "https://www.google.com/maps/search/?api=1&query=Biltmore+Hotel+Tbilisi",
   },
-  { time: "14:00", label: "ფოტოსესია ძველ ბათუმში" },
+  { time: "14:00", label: "ფოტოსესია ძველ თბილისში" },
   {
     time: "16:00",
-    label: "ხელის მოწერის ცერემონიალი პეტრას ციხე",
-    link: "https://maps.app.goo.gl/B2pJqNkRgCehzroB8?g_st=ic",
+    label: "ხელის მოწერის ცერემონიალი ნარიყალა",
+    link: "https://www.google.com/maps/search/?api=1&query=Narikala+Fortress+Tbilisi",
   },
   {
     time: "18:00",
-    label: "გალა ვახშამი ერა ჰოლში",
-    link: "https://maps.app.goo.gl/KKvZjWKEvpfrzUtE8?g_st=ic",
+    label: "გალა ვახშამი ვერე პარკში",
+    link: "https://www.google.com/maps/search/?api=1&query=Vere+Park+Tbilisi",
   },
 ];
 
@@ -40,17 +40,17 @@ export function Landing() {
         <img src={frame} alt="" className="w-full" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-[22%] text-center">
           <h1 className="font-galaktioni text-[2.1rem] leading-tight text-foreground sm:text-5xl">
-            <Typewriter text="სოფია" delay={1500} speed={130} onDone={() => setNamesDone(true)} />
+            <Typewriter text="ნინა" delay={1500} speed={130} onDone={() => setNamesDone(true)} />
             <span
               className="mx-2 text-primary transition-opacity duration-700"
               style={{ opacity: namesDone ? 1 : 0 }}
             >
               &
             </span>
-            {namesDone && <Typewriter text="კახა" speed={130} />}
+            {namesDone && <Typewriter text="ლუკა" speed={130} />}
           </h1>
           <p className="mt-4 font-galaktioni text-lg tracking-[0.15em] text-muted-foreground sm:text-xl">
-            <Typewriter text="06.06.2027" delay={3400} speed={95} onDone={() => setDateDone(true)} />
+            <Typewriter text="10.10.2026" delay={3400} speed={95} onDone={() => setDateDone(true)} />
           </p>
         </div>
       </div>

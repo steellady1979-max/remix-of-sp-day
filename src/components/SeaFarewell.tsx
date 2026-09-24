@@ -64,9 +64,9 @@ export function SeaFarewell({ className = "" }: { className?: string }) {
           <h2 className="mt-3 font-galaktioni text-2xl leading-snug text-foreground sm:text-3xl">
             გელოდებით სიყვარულით
           </h2>
-          <p className="mt-3 font-galaktioni text-xl text-primary sm:text-2xl">სოფია &amp; კახა</p>
+          <p className="mt-3 font-galaktioni text-xl text-primary sm:text-2xl">ნინა & ლუკა</p>
           <p className="mt-2 font-galaktioni text-sm tracking-[0.2em] text-muted-foreground">
-            06.06.2027
+            10.10.2026
           </p>
         </div>
       </div>
