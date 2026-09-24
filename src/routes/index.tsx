@@ -7,12 +7,12 @@ import { HummingbirdFlight } from "@/components/HummingbirdFlight";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "მარიამი & გიორგი — საქორწილო მოსაწვევი" },
+      { title: "ნინა & ლუკა — საქორწილო მოსაწვევი" },
       {
         name: "description",
-        content: "მარიამისა და გიორგის საქორწილო მოსაწვევი: თარიღი, ადგილი და ცერემონიის დეტალები.",
+        content: "ნინასა და ლუკას საქორწილო მოსაწვევი: თარიღი, ადგილი და ცერემონიის დეტალები.",
       },
-      { property: "og:title", content: "მარიამი & გიორგი — საქორწილო მოსაწვევი" },
+      { property: "og:title", content: "ნინა & ლუკა — საქორწილო მოსაწვევი" },
       {
         property: "og:description",
         content: "გიწვევთ ჩვენი ქორწილის დღეს — ყველა დეტალი ერთ გვერდზე.",
